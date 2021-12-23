@@ -1,15 +1,19 @@
-# Template for Telegram Bot
+# Telegram Bot to Connect Two Strangers
 
-This is a template repo for designing a telegram bot.
+This is a telegram bot which randomly connects two strangers.
 
 ## How to run?
-First, add `src` to `PYTHONPATH`:
+First, add `BOT_TOKEN` to the environment:
+```
+export BOT_TOKEN=<Your Bot Token>
+```
+
+Then, add `src` to `PYTHONPATH`:
 ```
 export PYTHONPATH=${PWD}
 ```
 
-Then, run the following code:
+Then, run:
 ```
 python src/run.py
 ```
-
