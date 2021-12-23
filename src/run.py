@@ -97,7 +97,8 @@ class Bot():
                 {'chat.id': current_user["connected_to"]}
             )
             # Terminate other user's connection.
-            self.update_state(other_user["state"], states.main)
+            self.update_state(other_user["chat"]["id"], states.main)
+            logger.info(f'other user state: {other_user["state"]}')
             self.send_message(
                 other_user["chat"]["id"],
                 f'Oops... the other user ended the chat\n {keys.exit}',
@@ -107,7 +108,6 @@ class Bot():
             # reset connection id
             self.update_connection_id(current_user["chat"]["id"], None)
             self.update_connection_id(other_user["chat"]["id"], None)
-
 
         @self.bot.message_handler(func=lambda m: True)
         def echo(message):
